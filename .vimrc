@@ -5,6 +5,9 @@ set fileencoding=utf-8
 set fileencodings=utf-8,ucs-bom,euc-jp,cp932,iso-2022-jp
 set fileencodings+=,ucs-2le,ucs-2
 
+"Shell
+set shell=/bin/bash
+
 "Disable beep and flash
 set noerrorbells visualbell t_vb=
 autocmd GUIEnter * set visualbell t_vb=
