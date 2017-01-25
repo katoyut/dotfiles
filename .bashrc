@@ -9,3 +9,8 @@ fi
 alias php-cs='~/.composer/vendor/bin/php-cs-fixer fix --config .php_cs --allow-risky yes'
 alias ll='ls -la --color=auto'
 alias vi='vim'
+alias tmux='tmux -2'
+
+# スクリーンロックのショートカットを解除
+stty stop undef
+stty start undef
