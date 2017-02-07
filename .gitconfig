@@ -1,3 +1,8 @@
 [user]
 	email = KatoYuta@next-group.jp
 	name = katoyut
+
+[alias]
+    st = status
+    co = checkout
+    br = branch
