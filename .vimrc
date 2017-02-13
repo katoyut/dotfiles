@@ -42,6 +42,7 @@ autocmd! FileType perl setlocal shiftwidth=2 tabstop=2
 autocmd! FileType html setlocal shiftwidth=2 tabstop=2
 autocmd! FileType css  setlocal shiftwidth=2 tabstop=2
 autocmd! FileType ruby setlocal shiftwidth=2 tabstop=2
+autocmd! FileType go setlocal noexpandtab tabstop=4 shiftwidth=4
 augroup END
 
 "新しい行のインデントを現在行と同じにする
@@ -136,7 +137,12 @@ let php_parent_error_close = 1
 let php_parent_error_open = 1
 "let php_folding = 1
 "let php_sync_method = xcolor>>"" scheme
-"
+
+""""""""""""""""""""""""""""""""
+""""""""""Goの設定""""""""""""""
+""""""""""""""""""""""""""""""""
+auto BufWritePre *.go Fmt
+
 syntax enable
 set t_Co=256
 "set background=dark
@@ -166,7 +172,8 @@ if has('vim_starting')
     NeoBundle 'jelera/vim-javascript-syntax'
     NeoBundle 'scrooloose/syntastic'
     NeoBundle 'scrooloose/nerdtree.git'
-    "NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+    NeoBundle 'Xuyuanp/nerdtree-git-plugin'
+    NeoBundle 'vim-jp/vim-go-extra'
 
     "color scheme
     NeoBundle 'molokai'
@@ -211,6 +218,8 @@ let g:syntastic_echo_current_error = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_enable_highlighting = 1
 let g:syntastic_php_php_args = '-l'
+let g:syntastic_mode_map = {'mode': 'passive', 'active_filetypes': ['go']}
+let g:syntastic_go_checkers = ['go', 'golint']
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*)}''"
@@ -284,8 +293,9 @@ inoremap [ []<ESC>i
 inoremap [<Enter> []<Left><CR><ESC><S-o>
 inoremap ( ()<ESC>i
 inoremap (<Enter> ()<Left><CR><ESC><S-o>
-inoremap " ""<Left>
-inoremap ' ''<Left>
+" inoremap " ""<Left>
+" inoremap ' ''<Left>
+" inoremap ` ``<Left>
 
 function! IndentBraces()
     let nowletter = getline(".")[col(".")-1]
@@ -308,8 +318,8 @@ inoremap <silent> <expr> <CR> IndentBraces()
 function! DeleteParenthesesAdjoin()
     let pos = col(".") - 1
     let str = getline(".")
-    let parentLList = ["(", "[", "{", "\'", "\""]
-    let parentRList = [")", "]", "}", "\'", "\""]
+    let parentLList = ["(", "[", "{", "\'", "\"", "`"]
+    let parentRList = [")", "]", "}", "\'", "\"", "`"]
     let cnt = 0
 
     let output = ""
