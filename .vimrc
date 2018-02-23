@@ -6,7 +6,7 @@ set fileencodings=utf-8,ucs-bom,euc-jp,cp932,iso-2022-jp
 set fileencodings+=,ucs-2le,ucs-2
 
 "Shell
-set shell=/bin/bash
+set shell=/usr/local/bin/zsh
 
 "Disable beep and flash
 set noerrorbells visualbell t_vb=
@@ -141,7 +141,9 @@ let php_parent_error_open = 1
 """"""""""""""""""""""""""""""""
 """"""""""Goの設定""""""""""""""
 """"""""""""""""""""""""""""""""
+" コメントアウトした設定を一旦解除
 auto BufWritePre *.go Fmt
+" let g:go_fmt_autosave = 1
 
 syntax enable
 set t_Co=256
@@ -174,6 +176,7 @@ if has('vim_starting')
     NeoBundle 'scrooloose/nerdtree.git'
     NeoBundle 'Xuyuanp/nerdtree-git-plugin'
     NeoBundle 'vim-jp/vim-go-extra'
+    NeoBundle 'ekalinin/Dockerfile.vim'
 
     "color scheme
     NeoBundle 'molokai'
@@ -219,7 +222,8 @@ let g:syntastic_auto_loc_list = 2
 let g:syntastic_enable_highlighting = 1
 let g:syntastic_php_php_args = '-l'
 let g:syntastic_mode_map = {'mode': 'passive', 'active_filetypes': ['go']}
-let g:syntastic_go_checkers = ['go', 'golint']
+" コメントアウトした設定を一旦解除
+"let g:syntastic_go_checkers = ['go', 'golint']
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*)}''"
