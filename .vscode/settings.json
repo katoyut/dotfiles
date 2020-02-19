@@ -1,0 +1,141 @@
+{
+    //==========================================================
+    // vscodeのデフォルトの設定
+    //==========================================================
+
+    //----------------------------------------------------------
+    // vscodeのeditorの設定
+    //----------------------------------------------------------
+    "editor.fontSize": 12, // フォントサイズ
+    "editor.wordWrap": "on", // コードの折り返し設定
+    "editor.minimap.enabled": false, // ミニマップ非表示
+    "editor.insertSpaces": true, // インデントにスペースを利用
+    "editor.tabSize": 2, // デフォルトのインデント幅
+    "editor.renderWhitespace": "boundary", // 空白文字を「・」に置き換えて表示（単語間の単一スペースは非表示）
+    "editor.formatOnSave": false, // 保存時のフォーマットを無効化
+    // 保存時に各種設定ファイルのルールに従ってフォーマット
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true,
+      "source.fixAll.tslint": true,
+      "source.fixAll.stylelint": true
+    },
+    "breadcrumbs.enabled": true, // パンくずを有効化
+
+    //----------------------------------------------------------
+    // vscodeの検索系
+    //----------------------------------------------------------
+    // 検索除外対象のディレクトリ
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/vendor": true,
+        "**/env": true,
+        "tags":true,
+        "**/.svn": true,
+        "**/.git": true,
+        "**/.DS_Store": true
+    },
+
+    //----------------------------------------------------------
+    // vscodeのfileの設定
+    //----------------------------------------------------------
+    // 拡張子の関連付け
+    "files.associations": {
+        "*.sql": "sql",
+        "*.vue": "vue"
+    },
+    "files.autoGuessEncoding": false, // ファイルを開いた際の文字コード自動判別を無効化
+    "files.trimFinalNewlines": true, // ファイル保存時に最終行以降の空行をトリミング
+    "files.trimTrailingWhitespace": true, // ファイル保存時に末尾の空白をトリミング
+    // ファイル監視から除外するファイル
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/**": true,
+        "**/.svn/**":true,
+        "**/vendor/**": true
+    },
+
+    //----------------------------------------------------------
+    // vscodeのバージョン管理系
+    //----------------------------------------------------------
+    "scm.alwaysShowProviders": true, // ソース管理プロバイダーのセクションを常に表示
+
+    //----------------------------------------------------------
+    // vscodeの作業環境の設定
+    //----------------------------------------------------------
+    "workbench.editor.labelFormat": "medium", // エディタのラベル書式の制御
+    "workbench.editor.revealIfOpen": true, // 任意の表示グループが開かれた際のエディタの表示制御（既に開いているエディタを表示）
+    "workbench.editor.showIcons": false, // エディタのアイコンを非表示
+    "workbench.editor.highlightModifiedTabs": true, // 編集中のタブをハイライト
+    "workbench.editor.tabSizing": "shrink", // エディタのタブの大きさを制御
+    "workbench.editor.tabCloseButton": "off", // エディタの閉じるボタンを非表示
+    "workbench.startupEditor": "newUntitledFile", // 起動時に新しい無題のファイルを開く（空のワークスペースを開いている時のみ）
+    "workbench.editor.openPositioning": "last", // エディタをタブの末尾に開く
+    "workbench.activityBar.visible": true, // アクティビティバーを表示
+    "workbench.list.automaticKeyboardNavigation": false, // サイドバーのツリー検索でデフォルトの挙動を無効化
+    "workbench.colorTheme": "Dark (Molokai)", // カラーテーマの設定
+    "explorer.openEditors.visible": 0, // [OPEN EDITORS] ウィンドウに表示するエディター数
+
+    //----------------------------------------------------------
+    // vscodeのdebugの設定
+    //----------------------------------------------------------
+    "debug.inlineValues": true, // デバッグ中にエディタの行内に変数値を表示
+
+    //----------------------------------------------------------
+    // vscodeのwindowの設定
+    //----------------------------------------------------------
+    "window.zoomLevel": 0, // windowのズームレベル
+
+    //----------------------------------------------------------
+    // vscodeのterminalの設定
+    //----------------------------------------------------------
+    "terminal.integrated.copyOnSelection": true, // ターミナルで選択しているテキストをクリップボードにコピー
+    "terminal.integrated.fontSize": 12, // ターミナルのフォントサイズ
+
+    //==========================================================
+    // installした拡張の設定
+    //==========================================================
+
+    //----------------------------------------------------------
+    // vscode vimの設定
+    //----------------------------------------------------------
+    "vim.useSystemClipboard": true, // システムのクリップボードを利用
+    "vim.hlsearch": true, // 検索にマッチしたテキストをハイライト
+    "vim.easymotion": true, // easymotionを有効化
+    "vim.visualstar": true, // *での検索を有効化
+    "vim.useCtrlKeys": true, // ctrlキーを使った操作を有効化
+    "vim.ignorecase": true, // 検索時に大文字/小文字を無視
+    "vim.incsearch": true, // インクリメンタルサーチを有効化
+    "vim.sneak": true, // vim-sneakプラグインを有効化
+
+    //----------------------------------------------------------
+    // vscode goの設定
+    //----------------------------------------------------------
+    "go.docsTool": "gogetdoc",
+    "go.useLanguageServer": false,
+    "go.languageServerExperimentalFeatures": {
+        "format": true,
+        "autoComplete": true
+    },
+
+    //----------------------------------------------------------
+    // veturの設定
+    //----------------------------------------------------------
+    "vetur.format.options.tabSize": 2,
+    "vetur.format.options.useTabs": false,
+    "vetur.format.defaultFormatter.html": "prettyhtml",
+    "vetur.format.defaultFormatter.css": "prettier",
+    "vetur.format.defaultFormatter.postcss": "prettier",
+    "vetur.format.defaultFormatter.scss": "prettier",
+    "vetur.format.defaultFormatter.less": "prettier",
+    "vetur.format.defaultFormatter.stylus": "stylus-supremacy",
+    "vetur.format.defaultFormatter.js": "prettier",
+    "vetur.format.defaultFormatter.ts": "prettier",
+    // ESLintのVue.js設定
+    "eslint.validate": [
+      "javascript",
+      "javascriptreact",
+      "vue"
+    ],
+}
