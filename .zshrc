@@ -63,5 +63,12 @@ stty stop undef
 stty start undef
 
 # path
-# export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/projects/go
+
+export PATH=$PATH:/usr/local/Cellar/git/2.17.1
+export PATH=$PATH:~/.nodebrew/current/bin
+
+export PATH=$PATH:/usr/local/bin/ant/bin
+
+export PATH=$PATH:/usr/local/bin/ssh

@@ -43,6 +43,8 @@ autocmd! FileType html setlocal shiftwidth=2 tabstop=2
 autocmd! FileType css  setlocal shiftwidth=2 tabstop=2
 autocmd! FileType ruby setlocal shiftwidth=2 tabstop=2
 autocmd! FileType go setlocal noexpandtab tabstop=4 shiftwidth=4
+autocmd! FileType javascript setlocal shiftwidth=2 tabstop=2
+autocmd! FileType vue setlocal shiftwidth=2 tabstop=2
 augroup END
 
 "新しい行のインデントを現在行と同じにする
@@ -117,6 +119,9 @@ set whichwrap=b,s,h,l,<,>,[,]
 "twigをシンタックスハイライト"
 autocmd BufReadPost *.twig set filetype=jinjahtml
 
+"vueをシンタックスハイライト
+autocmd BufNewFile,BufRead *.{html,htm,vue*} set filetype=html
+
 """"""""""""""""""""""""""""""""
 """"""""key mapping"""""""""""""
 """"""""""""""""""""""""""""""""
@@ -177,6 +182,8 @@ if has('vim_starting')
     NeoBundle 'Xuyuanp/nerdtree-git-plugin'
     NeoBundle 'vim-jp/vim-go-extra'
     NeoBundle 'ekalinin/Dockerfile.vim'
+    NeoBundle 'rickhowe/diffchar.vim'
+    NeoBundle 'evidens/vim-twig'
 
     "color scheme
     NeoBundle 'molokai'
