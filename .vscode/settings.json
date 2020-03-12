@@ -118,6 +118,10 @@
         "format": true,
         "autoComplete": true
     },
+    "go.formatTool": "gofmt",
+    "go.formatFlags": [
+        "-w"
+    ],
 
     //----------------------------------------------------------
     // veturの設定
@@ -138,4 +142,5 @@
       "javascriptreact",
       "vue"
     ],
+    "explorer.confirmDragAndDrop": false,
 }
